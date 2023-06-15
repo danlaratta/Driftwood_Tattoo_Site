@@ -6,30 +6,6 @@
   --gold: #c59d5f;
 }
 
-.nav-link {
-  display: block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 0.75rem;
-  padding-right: 1rem;
-  color: #fff;
-  border-radius: 0.25rem;
-}
-
-.nav-link:hover {
-  color: red;
-}
-
-/* @media (min-width: 768px) {
-  .nav-link:hover {
-    background-color: transparent;
-    border: 0;
-    color: #1e40af;
-    padding: 0;
-  }
-
-} */
-
 
 
 
