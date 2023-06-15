@@ -1,8 +1,18 @@
 import Navbar from '@/components/Navbar'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Playfair_Display, Roboto_Mono } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const playfair_display = Playfair_Display({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-playfair_display',
+})
+
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -16,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${playfair_display.variable} ${roboto_mono.variable}`}>
         <Navbar />
         {children}
       </body>
