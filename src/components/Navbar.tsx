@@ -1,18 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { IoMenu, IoClose } from 'react-icons/io5';
 
 const Navbar = () => {
 	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+	const [isScrolled, setIsScrolled] = useState(false);
 
 	const toggleMobileMenu = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
 	};
 
-	const navClassName = isMobileMenuOpen ? 'w-full absolute z-10 bg-black' : 'w-full absolute z-10 bg-transparent';
+	// const navClassName = isMobileMenuOpen 
+	// 	? 'w-full fixed z-10 bg-black' : isScrolled
+	// 	? 'w-full fixed z-10 bg-black' : 'w-full absolute z-10 bg-transparent';
+
+	const navClassName = isMobileMenuOpen || isScrolled ? 'w-full fixed z-10 bg-black transition-colors duration-500'
+    : 'w-full fixed z-10 bg-transparent';
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollTop = window.scrollY;
+			setIsScrolled(scrollTop > 100);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
 
 	return (
 		<nav className={navClassName}>
