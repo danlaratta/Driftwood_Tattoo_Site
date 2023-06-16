@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 const Hero = () => {
 	return (
 		<div
@@ -9,9 +11,9 @@ const Hero = () => {
 					<h1 className='text-white text-6xl font-bold text-center leading-40'>
 						Where Tattoo Ideas Come <br />  To Life
 					</h1>
-					<button className='text-white text-2xl bg-transparent border-2 border-white hover:bg-gold hover:border-gold rounded px-4 py-2'>
+					<Link href='/contact' className='text-white text-2xl bg-transparent border-2 border-white hover:bg-gold hover:border-gold rounded px-4 py-2'>
 						Book Now
-					</button>
+					</Link>
 				</div>
 			</div>
 		</div>
