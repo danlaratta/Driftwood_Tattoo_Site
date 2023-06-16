@@ -16,6 +16,9 @@ module.exports = {
         sans: ['var(--font-playfair_display)'],
         mono: ['var(--font-roboto-mono)'],
       },
+      colors: {
+        gold: 'var(--gold)',
+      },
     },
   },
   plugins: [],

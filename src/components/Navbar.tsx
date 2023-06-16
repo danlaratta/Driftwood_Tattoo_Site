@@ -13,10 +13,6 @@ const Navbar = () => {
 		setIsMobileMenuOpen(!isMobileMenuOpen);
 	};
 
-	// const navClassName = isMobileMenuOpen 
-	// 	? 'w-full fixed z-10 bg-black' : isScrolled
-	// 	? 'w-full fixed z-10 bg-black' : 'w-full absolute z-10 bg-transparent';
-
 	const navClassName = isMobileMenuOpen || isScrolled ? 'w-full fixed z-10 bg-black transition-colors duration-500'
     : 'w-full fixed z-10 bg-transparent';
 
@@ -39,33 +35,33 @@ const Navbar = () => {
 				<div className='flex items-center justify-between h-16'>
 					<div className='flex-shrink-0'>
 						<Link href='/' className='text-white font-bold text-xl'>
-							<Image src='/logo.svg' alt='Logo' width={200} height={100} />
+							<Image src='/logo.svg' alt='Logo' width={isScrolled ? 200 : 250} height={isScrolled ? 100 : 150} />
 						</Link>
 					</div>
 
 					<div className='hidden md:block'>
 						<div className='ml-4 flex items-center space-x-4'>
-							<Link href='/' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+							<Link href='/' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								Home
 							</Link>
 
-							<Link href='/about' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+							<Link href='/about' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								About
 							</Link>
 
-							<Link href='/artists' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+							<Link href='/artists' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								Artists
 							</Link>
 
-							<Link href='/piercers' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+							<Link href='/piercers' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								Piercers
 							</Link>
 
-                            <Link href='/aftercare' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+                            <Link href='/aftercare' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								Aftercare
 							</Link>
 
-							<Link href='/contact' className='text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+							<Link href='/contact' className='text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 								Contact
 							</Link>
 						</div>
@@ -73,7 +69,7 @@ const Navbar = () => {
 
 					<div className='md:hidden flex items-center'>
 						<button
-							className='text-gray-300 hover:text-white focus:outline-none'
+							className='text-white hover:text-gold focus:outline-none'
 							onClick={toggleMobileMenu}
 						>
 							{isMobileMenuOpen ? (
@@ -89,27 +85,27 @@ const Navbar = () => {
 			{isMobileMenuOpen && (
 				<div className='md:hidden bg-black absolute top-16 left-0 w-full flex justify-center'>
 					<div className='w-2/12 flex-col justify-start px-2 pt-2 pb-3 space-y-1 sm:px-3'>
-                    	<Link href='/' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+                    	<Link href='/' className='block text-white  hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							Home
 						</Link>
 
-						<Link href='/about' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+						<Link href='/about' className='block text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							About
 						</Link>
 
-						<Link href='/artists' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+						<Link href='/artists' className='block text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							Artists
 						</Link>
 
-						<Link href='/piercers' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+						<Link href='/piercers' className='block text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							Piercers
 						</Link>
 
-						<Link href='/aftercare' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+						<Link href='/aftercare' className='block text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							Aftercare
 						</Link>
 
-						<Link href='/contact' className='block text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium'>
+						<Link href='/contact' className='block text-white hover:text-gold px-3 py-2 rounded-md text-md font-medium'>
 							Contact
 						</Link>
 					</div>
