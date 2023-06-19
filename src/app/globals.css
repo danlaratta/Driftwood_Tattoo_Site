@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --gold: #c59d5f;
-}
-
 body {
-  font-family: var(--font-roboto-mono);
+  font-family: var(--font-roboto);
 }
 
 h1 {
-  font-family: var(--font-playfair_display);
+  font-family: var(--font-roboto-slab);
 }
 
 
